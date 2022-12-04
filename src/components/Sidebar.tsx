@@ -6,7 +6,7 @@ import '../sass/sidebar.scss'
 
 export default function Sidebar() {
     return(
-        <Col xs={12} md={6} id="steps-box">
+        <Col xs={12} md={5} lg={3} id="steps-box">
             <img src={desktopSidebar} alt="desktop sidebar" className='d-none d-md-block'/>
             <img src={mobileSidebar} alt="mobile sidebar" className='d-block d-md-none'/>
             <Nav>

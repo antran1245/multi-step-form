@@ -1,0 +1,55 @@
+#personal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    h1 {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 37px;
+    }
+    .detail {
+        font-size: 16px;
+        line-height: 25px;
+        font-weight: 400;
+        color: #9699AA;
+    }
+    form {
+        & > div {
+            margin-bottom: 24px;
+        }
+        .form-label {
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 400;
+        }
+    }
+    button {
+        background-color: #022959;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 18px;
+        color: #FFFFFF;
+        width: fit-content;
+        align-self: flex-end;
+        padding: 15px 24px;
+    }
+}
+
+// Tablet screen size
+@media only screen and (max-width: 768px) {
+    #personal {
+        margin-top: 30px;
+    }
+}
+
+
+// Mobile screen size
+@media only screen and (max-width: 576px) {
+    #personal {
+        background-color: #FFFFFF;
+        padding: 32px 24px;
+        margin-top: -80px;
+        z-index: 1;
+        border-radius: 10px;
+    }
+}

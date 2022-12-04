@@ -33,10 +33,11 @@
                 justify-content: center;
                 width: 33px;
                 height: 33px;
-                background-color: transparent;
                 border-radius: 50%;
-                border: 1px solid #FFFFFF;
                 margin-right: 16px;
+                background-color: transparent;
+                border: 1px solid #FFFFFF;
+                color: #FFFFFF;
             }
             &:hover {
                 .circle, .active {
@@ -67,10 +68,33 @@
     }
 }
 
+@media only screen and (max-width: 768px) {
+    #steps-box {
+        padding: 0;
+        z-index: 0;
+        img {
+            width: 100%;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .nav {
+            padding: 0;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            .nav-link {
+                margin: 0;
+                margin-top: 32px;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 576px) {
     #steps-box {
         border-radius: 0;
         padding: 0;
+        z-index: 0;
         img {
             border-radius: 0;
             width: 100%;
