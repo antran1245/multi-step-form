@@ -2,7 +2,21 @@ import React from 'react'
 import { Button, Col, Form, Row } from 'react-bootstrap'
 import '../sass/personal.scss'
 
-export default function Personal() {
+type PersonalProps = {
+    setDisplay: React.Dispatch<React.SetStateAction<string>>;
+    setForm: React.Dispatch<React.SetStateAction<{
+        name: string;
+        email: string;
+        phone: string
+    }>>;
+    form: {
+        name: string;
+        email: string;
+        phone: string
+    }
+}
+
+export default function Personal({ setDisplay, setForm, form } : PersonalProps) {
     return(
             <Col xs={11} sm={12} lg={6} id="personal">
                 <div>
@@ -11,19 +25,19 @@ export default function Personal() {
                     <Form>
                         <Form.Group>
                             <Form.Label>Name</Form.Label>
-                            <Form.Control type='text' placeholder='e.g. Stephen King'/>
+                            <Form.Control type='text' placeholder='e.g. Stephen King' value={form.name} onChange={(e) => setForm({...form, name: e.target.value})}/>
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Email Address</Form.Label>
-                            <Form.Control type="text" placeholder='e.g. stephenking@lorem.com'/>
+                            <Form.Control type="text" placeholder='e.g. stephenking@lorem.com' value={form.email} onChange={(e) => setForm({...form, email: e.target.value})}/>
                         </Form.Group>
                         <Form.Group>
                             <Form.Label>Phone Number</Form.Label>
-                            <Form.Control type="text" placeholder='e.g. +1 234 567 890'/>
+                            <Form.Control type="text" placeholder='e.g. +1 234 567 890' value={form.phone} onChange={(e) => setForm({...form, phone: e.target.value})}/>
                         </Form.Group>
                     </Form>
                 </div>
-                <Button>Next Step</Button>
+                <Button onClick={() => setDisplay('plan')}>Next Step</Button>
             </Col>
     )
 }

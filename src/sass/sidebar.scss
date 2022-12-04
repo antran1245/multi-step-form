@@ -39,13 +39,12 @@
                 border: 1px solid #FFFFFF;
                 color: #FFFFFF;
             }
-            &:hover {
-                .circle, .active {
-                    border: none;
-                    background-color: #BEE2FD;
-                    color: #022959;
-                }
+            &:hover .circle, .active {
+                border: none;
+                background-color: #BEE2FD;
+                color: #022959;
             }
+            
 
             // STEP 1...
             .nav-type {
