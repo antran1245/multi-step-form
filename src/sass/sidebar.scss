@@ -1,0 +1,89 @@
+#steps-box {
+    position: relative;
+    border-radius: 10px;
+    img {
+        border-radius: 10px;
+    }
+    
+    // position nav content over sidebar
+    .nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        padding-top: 40px;
+        padding-left: 32px;
+        .nav-link{
+            color: white;
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            padding: 0;
+            margin-bottom: 32px;
+            width: fit-content;
+            p {
+                margin: 0;
+            }
+
+            // circle with number in middle
+            .circle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 33px;
+                height: 33px;
+                background-color: transparent;
+                border-radius: 50%;
+                border: 1px solid #FFFFFF;
+                margin-right: 16px;
+            }
+            &:hover {
+                .circle, .active {
+                    border: none;
+                    background-color: #BEE2FD;
+                    color: #022959;
+                }
+            }
+
+            // STEP 1...
+            .nav-type {
+                :nth-child(1) {
+                    color: #ABBCFF;
+                    font-size: 12px;
+                    line-height: 14px;
+                    font-weight: 400;
+                }
+                :nth-child(2) {
+                    font-size: 14px;
+                    font-weight: 700;
+                    line-height: 16px;
+                    letter-spacing: 1px;
+                    color: #FFFFFF;
+                    margin-top: 4px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    #steps-box {
+        border-radius: 0;
+        padding: 0;
+        img {
+            border-radius: 0;
+            width: 100%;
+        }
+        .nav {
+            padding: 0;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            .nav-link {
+                margin: 0;
+                margin-top: 32px;
+            }
+        }
+    }
+}
