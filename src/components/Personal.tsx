@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Col, Form, Row } from 'react-bootstrap'
+import { Button, Col, Form } from 'react-bootstrap'
 import '../sass/personal.scss'
 
 type PersonalProps = {
