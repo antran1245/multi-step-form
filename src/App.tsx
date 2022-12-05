@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Sidebar from './components/Sidebar';
 import Personal from './components/Personal';
-import './App.css';
 import Plan from './components/Plan';
+import './App.css';
+import './sass/App.scss'
 
 function App() {
   const [display, setDisplay] = useState<string>('personal')

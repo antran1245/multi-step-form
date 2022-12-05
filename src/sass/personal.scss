@@ -2,17 +2,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    h1 {
-        font-size: 32px;
-        font-weight: 700;
-        line-height: 37px;
-    }
-    .detail {
-        font-size: 16px;
-        line-height: 25px;
-        font-weight: 400;
-        color: #9699AA;
-    }
     form {
         & > div {
             margin-bottom: 24px;
@@ -23,15 +12,18 @@
             font-weight: 400;
         }
     }
-    button {
-        background-color: #022959;
-        font-size: 16px;
-        font-weight: 500;
-        line-height: 18px;
-        color: #FFFFFF;
-        width: fit-content;
-        align-self: flex-end;
-        padding: 15px 24px;
+    .button-container {
+        display: flex;
+        justify-content: flex-end;
+        button {
+            background-color: #022959;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 18px;
+            color: #FFFFFF;
+            width: fit-content;
+            padding: 15px 24px;
+        }
     }
 }
 
@@ -51,5 +43,13 @@
         margin-top: -80px;
         z-index: 1;
         border-radius: 10px;
+        .button-container {
+            background-color: #FFFFFF;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            padding: 16px;
+        }
     }
 }

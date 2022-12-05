@@ -8,15 +8,17 @@ export default function Plan() {
     return(
         <Col xs={11} sm={12} lg={8} id="plan">
             <div>
-                <h1>Personal info</h1>
-                <p className='detail'>Please provide your name, email address, and phone number.</p>
+                <h1>Select your plan</h1>
+                <p className='detail'>You have the option of monthly or yearly billing.</p>
                 <Row id="cards">
                     <Col md={4}>
                         <Card className='h-100'>
                             <Card.Body>
                                 <img src={arcade} alt="arcade"/>
-                                <Card.Title>Arcade</Card.Title>
-                                <Card.Subtitle>$9/mo</Card.Subtitle>
+                                <div>
+                                    <Card.Title>Arcade</Card.Title>
+                                    <Card.Subtitle>$9/mo</Card.Subtitle>
+                                </div>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -24,8 +26,10 @@ export default function Plan() {
                         <Card className='h-100'>
                             <Card.Body>
                                 <img src={advanced} alt="advanced"/>
-                                <Card.Title>Advanced</Card.Title>
-                                <Card.Subtitle>$12/mo</Card.Subtitle>
+                                <div>
+                                    <Card.Title>Advanced</Card.Title>
+                                    <Card.Subtitle>$12/mo</Card.Subtitle>
+                                </div>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -33,8 +37,10 @@ export default function Plan() {
                         <Card className='h-100'>
                             <Card.Body>
                                 <img src={pro} alt="pro"/>
-                                <Card.Title>Pro</Card.Title>
-                                <Card.Subtitle>$15/mo</Card.Subtitle>
+                                <div>
+                                    <Card.Title>Pro</Card.Title>
+                                    <Card.Subtitle>$15/mo</Card.Subtitle>
+                                </div>
                             </Card.Body>
                         </Card>
                     </Col>

@@ -37,7 +37,9 @@ export default function Personal({ setDisplay, setForm, form } : PersonalProps) 
                         </Form.Group>
                     </Form>
                 </div>
-                <Button onClick={() => setDisplay('plan')}>Next Step</Button>
+                <div className='button-container'>
+                    <Button onClick={() => setDisplay('plan')}>Next Step</Button>
+                </div>
             </Col>
     )
 }
