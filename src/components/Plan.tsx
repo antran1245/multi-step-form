@@ -107,7 +107,7 @@ export default function Plan({ activePlan, setActivePlan, setDisplay } : PlanPro
             </div>
             <div className='button-group'>
                 <p onClick={() => setDisplay('personal')}>Go Back</p>
-                <Button>Next Step</Button>
+                <Button  onClick={() => setDisplay('addon')}>Next Step</Button>
             </div>
         </Col>
     )

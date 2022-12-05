@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Sidebar from './components/Sidebar';
 import Personal from './components/Personal';
 import Plan from './components/Plan';
+import Addon from './components/Addon';
 import './App.css';
 import './sass/App.scss'
 
@@ -22,6 +23,7 @@ function App() {
             <Col className='d-flex justify-content-center pt-0 pt-md-4'>
               {display === 'personal'? <Personal setDisplay={setDisplay} setForm={setForm} form={form}/> : null}
               {display === 'plan'? <Plan setDisplay={setDisplay} activePlan={activePlan} setActivePlan={setActivePlan}/> : null}
+              {display === 'addon'? <Addon setDisplay={setDisplay}/> : null}
             </Col>
           </Row>
         </Container>
