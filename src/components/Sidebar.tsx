@@ -29,8 +29,8 @@ export default function Sidebar({display, setDisplay}: SidebarProps) {
                         <p>SELECT PLAN</p>
                     </div>
                 </Nav.Link>
-                <Nav.Link onClick={() => setDisplay('addons')}>
-                    <p className={`circle ${display === 'addons'? 'active' : null}`}>3</p>
+                <Nav.Link onClick={() => setDisplay('addon')}>
+                    <p className={`circle ${display === 'addon'? 'active' : null}`}>3</p>
                     <div className='nav-type d-none d-md-block'>
                         <p>STEP 3</p>
                         <p>ADD-ONS</p>

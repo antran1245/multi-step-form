@@ -18,7 +18,7 @@ type PersonalProps = {
 
 export default function Personal({ setDisplay, setForm, form } : PersonalProps) {
     return(
-            <Col xs={11} sm={12} lg={6} id="personal">
+            <Col xs={11} sm={12} lg={8} id="personal">
                 <div>
                     <h1>Personal info</h1>
                     <p className='detail'>Please provide your name, email address, and phone number.</p>
