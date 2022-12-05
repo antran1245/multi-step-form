@@ -16,6 +16,8 @@
             padding-top: 20px;
             img {
                 margin-bottom: 39px;
+                width: 40px;
+                align-self: flex-start;
             }
             .card-title {
                 font-size: 16px;
@@ -25,9 +27,14 @@
             }
             .card-subtitle {
                 font-size: 14px;
-                font-weight: 400;
                 line-height: 16px;
                 color: #9699AA;
+                margin-top: 7px;
+            }
+            .card-text {
+                font-size: 12px;
+                line-height: 14px;
+                margin-top: 6px;
             }
         }
     }
@@ -92,6 +99,14 @@
             line-height: 18px;
             font-weight: 500;
             color: #9699AA;
+            &:hover {
+                color: #022959;
+            }
+        }
+        button {
+            background-color: #022959;
+            border: none;
+            padding: 14px 24px 16px 25px;
         }
     }
 }
@@ -100,6 +115,28 @@
 @media only screen and (max-width: 768px) {
     #plan {
         margin-top: 30px;
+        #cards {
+            & > div {
+                margin-bottom: 12px;
+            }
+            .card-body {
+                display: flex;
+                img {
+                    margin-bottom: 0;
+                    margin-right: 14px;
+                }
+                .card-text {
+                    line-height: 20px;
+                    margin-top: 3px;
+                }
+            }
+        }
+        form {
+            margin-top: 0;
+        }
+        .button-group {
+            padding: 16px;
+        }
     }
 }
 
@@ -112,21 +149,6 @@
         margin-top: -80px;
         z-index: 1;
         border-radius: 10px;
-        #cards {
-            & > div {
-                margin-bottom: 12px;
-            }
-            .card-body {
-                display: flex;
-                img {
-                    margin-bottom: 0;
-                    margin-right: 14px;
-                }
-            }
-        }
-        form {
-            margin-top: 0;
-        }
         .button-group {
             background-color: #FFFFFF;
             position: absolute;
