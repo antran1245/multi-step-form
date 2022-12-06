@@ -6,6 +6,7 @@ import Plan from './components/Plan';
 import Addon from './components/Addon';
 import './App.css';
 import './sass/App.scss'
+import Finishing from './components/Finishing';
 
 function App() {
   const [display, setDisplay] = useState<string>('personal')
@@ -27,6 +28,7 @@ function App() {
               {display === 'personal'? <Personal setDisplay={setDisplay} setForm={setForm} form={form}/> : null}
               {display === 'plan'? <Plan setDisplay={setDisplay} activePlan={activePlan} setActivePlan={setActivePlan}/> : null}
               {display === 'addon'? <Addon setDisplay={setDisplay} setAddons={setAddons} addons={addons}/> : null}
+              {display === 'finishing'? <Finishing/> : null}
             </Col>
           </Row>
         </Container>

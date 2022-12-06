@@ -36,7 +36,7 @@ export default function Sidebar({display, setDisplay}: SidebarProps) {
                         <p>ADD-ONS</p>
                     </div>
                 </Nav.Link>
-                <Nav.Link onClick={() => setDisplay('summary')}>
+                <Nav.Link onClick={() => setDisplay('finishing')}>
                     <p className={`circle ${display === 'summary'? 'active' : null}`}>4</p>
                     <div className='nav-type d-none d-md-block'>
                         <p>STEP 4</p>
