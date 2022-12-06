@@ -43,7 +43,7 @@ export default function Plan({ activePlan, setActivePlan, setDisplay, switchPlan
             setActivePlan({...activePlan, cost: newCost, type: type})
         }
         setSwitchPlan(!switchPlan)
-        setActivePlan({...activePlan, type: !switchPlan? 'Monthly' : 'Yearly'})
+        setActivePlan({...activePlan, cost: !switchPlan? activePlan.cost/10 : activePlan.cost*10 ,type: !switchPlan? 'Monthly' : 'Yearly'})
     }
     return(
         <Col xs={11} sm={12} lg={8} id="plan">

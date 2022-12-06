@@ -6,10 +6,29 @@
         & > div {
             margin-bottom: 24px;
         }
+        .label-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            .error {
+                font-size: 14px;
+                line-height: 16px;
+                margin-bottom: 0;
+                color: #EE374A;
+            }
+        }
         .form-label {
             font-size: 14px;
             line-height: 16px;
             font-weight: 400;
+            margin-bottom: 0;
+        }
+        input:focus {
+            box-shadow: none;
+            border-color: #483EFF;
+        }
+        .error-bar {
+            border-color: #EE374A;
         }
     }
     .button-container {
