@@ -1,0 +1,59 @@
+#addon {
+    .row {
+        background-color: #FFFFFF;
+        border: 1px solid #D6D9E6;
+        border-radius: 8px;
+        padding: 16px 24px 20px 24px;
+        margin-bottom: 16px;
+        p {
+            margin: 0;
+        }
+        & > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .title {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 18px;
+            margin-bottom: 7px;
+        }
+        .detail {
+            font-size: 14px;
+            line-height: 20px;
+            color: #9699AA;
+        }
+        .cost {
+            font-size: 14px;
+            line-height: 20px;
+            color: #483EFF;
+        }
+        input[type="checkbox"] {
+            appearance: none;
+            background-color: #FFFFFF;
+            margin: 0;
+            font: inherit;
+            color: currentColor;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #9699AA;
+            border-radius: 4px;
+            transform: translateY(-0.075em);
+            display: grid;
+            place-content: center;
+        }
+        input[type="checkbox"]::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            box-shadow: inset 1em 1em white;
+            clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        }
+        input[type="checkbox"]:checked {
+            background-color: #483EFF;
+            border: 1px solid #483EFF;
+        }
+    }
+}
+
