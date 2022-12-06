@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Col, Button, Card, Row, Form } from 'react-bootstrap'
 import arcade from '../assets/images/icon-arcade.svg'
 import advanced from '../assets/images/icon-advanced.svg'
@@ -17,10 +16,11 @@ type PlanProps = {
         type: string;
     }>>;
     setDisplay: React.Dispatch<React.SetStateAction<string>>;
+    setSwitchPlan: React.Dispatch<React.SetStateAction<boolean>>;
+    switchPlan: boolean;
 }
-export default function Plan({ activePlan, setActivePlan, setDisplay } : PlanProps) {
-    const [switchPlan, setSwitchPlan] = useState<boolean>(true)
-
+export default function Plan({ activePlan, setActivePlan, setDisplay, switchPlan, setSwitchPlan } : PlanProps) {
+    
     /**
      * Update activePlan when select a card
      * @param plan : string -> name of the plan
@@ -38,8 +38,9 @@ export default function Plan({ activePlan, setActivePlan, setDisplay } : PlanPro
      */
     const updatePlan = () => {
         if (activePlan.title !== '') {
+
             let type = !switchPlan? 'Monthly' : 'Yearly'
-            let newCost = !switchPlan? activePlan.cost : activePlan.cost*10
+            let newCost = !switchPlan? activePlan.cost/10 : activePlan.cost*10
             setActivePlan({...activePlan, cost: newCost, type: type})
         }
         setSwitchPlan(!switchPlan)
@@ -99,7 +100,7 @@ export default function Plan({ activePlan, setActivePlan, setDisplay } : PlanPro
                 <Form>
                     <Form.Label>Monthly</Form.Label>
                     <label className='switch'>
-                        <input type={'checkbox'} onClick={() => updatePlan()}/>
+                        <input type={'checkbox'} onClick={() => updatePlan()} checked={!switchPlan}/>
                         <span className='slider'></span>
                     </label>
                     <Form.Label>Yearly</Form.Label>

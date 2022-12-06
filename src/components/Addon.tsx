@@ -94,7 +94,7 @@ export default function Addon ({setDisplay, setAddons, addons} : AddonProps) {
             </div>
             <div className='button-group'>
                 <p onClick={() => setDisplay('plan')}>Go Back</p>
-                <Button>Next Step</Button>
+                <Button onClick={() => setDisplay('finishing')}>Next Step</Button>
             </div>
         </Col>
     )

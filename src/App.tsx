@@ -14,6 +14,7 @@ function App() {
   const [form, setForm] = useState<{name: string, email: string, phone: string}>({name: '', email: '', phone: ''})
 
   // Plan selected
+  const [switchPlan, setSwitchPlan] = useState<boolean>(true)
   const [activePlan, setActivePlan] = useState<{title: string, cost: number, type: string}>({title: '', cost: 0, type: ''})
 
   // Add on
@@ -26,9 +27,9 @@ function App() {
             <Sidebar display={display} setDisplay={setDisplay}/>
             <Col className='d-flex justify-content-center pt-0 pt-md-4'>
               {display === 'personal'? <Personal setDisplay={setDisplay} setForm={setForm} form={form}/> : null}
-              {display === 'plan'? <Plan setDisplay={setDisplay} activePlan={activePlan} setActivePlan={setActivePlan}/> : null}
+              {display === 'plan'? <Plan setDisplay={setDisplay} activePlan={activePlan} setActivePlan={setActivePlan} switchPlan={switchPlan} setSwitchPlan={setSwitchPlan}/> : null}
               {display === 'addon'? <Addon setDisplay={setDisplay} setAddons={setAddons} addons={addons}/> : null}
-              {display === 'finishing'? <Finishing/> : null}
+              {display === 'finishing'? <Finishing setDisplay={setDisplay} form={form} activePlan={activePlan} addons={addons}/> : null}
             </Col>
           </Row>
         </Container>
