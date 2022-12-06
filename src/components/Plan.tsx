@@ -23,8 +23,8 @@ export default function Plan({ activePlan, setActivePlan, setDisplay } : PlanPro
 
     /**
      * Update activePlan when select a card
-     * @param plan : string
-     * @param cost : number
+     * @param plan : string -> name of the plan
+     * @param cost : number -> cost of the monthly plan
      */
     const selectedPlan = (plan: string, cost: number) => {
         let type = switchPlan? 'Monthly' : 'Yearly'

@@ -14,6 +14,9 @@ function App() {
 
   // Plan selected
   const [activePlan, setActivePlan] = useState<{title: string, cost: number, type: string}>({title: '', cost: 0, type: ''})
+
+  // Add on
+  const [addons, setAddons] = useState<{title?: string; cost?: number}[]>([])
   return (
     <div>
       <Container fluid id="form-box">
@@ -23,7 +26,7 @@ function App() {
             <Col className='d-flex justify-content-center pt-0 pt-md-4'>
               {display === 'personal'? <Personal setDisplay={setDisplay} setForm={setForm} form={form}/> : null}
               {display === 'plan'? <Plan setDisplay={setDisplay} activePlan={activePlan} setActivePlan={setActivePlan}/> : null}
-              {display === 'addon'? <Addon setDisplay={setDisplay}/> : null}
+              {display === 'addon'? <Addon setDisplay={setDisplay} setAddons={setAddons} addons={addons}/> : null}
             </Col>
           </Row>
         </Container>

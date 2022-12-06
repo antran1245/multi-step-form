@@ -5,6 +5,7 @@
         border-radius: 8px;
         padding: 16px 24px 20px 24px;
         margin-bottom: 16px;
+        cursor: pointer;
         p {
             margin: 0;
         }
@@ -13,6 +14,7 @@
             flex-direction: column;
             justify-content: center;
         }
+
         .title {
             font-size: 16px;
             font-weight: 500;
@@ -42,6 +44,7 @@
             transform: translateY(-0.075em);
             display: grid;
             place-content: center;
+            cursor: pointer;
         }
         input[type="checkbox"]::before {
             content: "";
@@ -54,6 +57,10 @@
             background-color: #483EFF;
             border: 1px solid #483EFF;
         }
+    }
+    .row:hover, .active {
+        background-color: #F8F9FF;
+        border: 1px solid #483EFF;
     }
 }
 
