@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Col, Row, Button } from 'react-bootstrap'
 import '../sass/finishing.scss'
 
@@ -21,6 +21,17 @@ interface FinishingProps {
 }
 
 export default function Finishing({setDisplay, form, activePlan, addons} : FinishingProps) {
+    const [total, setTotal] = useState<number>(0)
+
+    useEffect(() => {
+        let mult = activePlan.type === 'Monthly'? 1 : 10
+        let sum = activePlan.cost
+        for(const item of addons) {
+            sum += item.cost? item.cost*mult : 0
+        }
+        setTotal(sum)
+    }, [activePlan, addons])
+
     return(
         <Col xs={11} sm={11} lg={8} id="finishing">
             <div>
@@ -50,13 +61,13 @@ export default function Finishing({setDisplay, form, activePlan, addons} : Finis
                     })}
                 </Row>
                 <div className='total'>
-                    <p className='subtitle'>Total</p>
-                    <p className="price">+$12/mo</p>
+                    <p className='subtitle'>Total (per {activePlan.type === 'Monthly'? 'month' : 'year'})</p>
+                    <p className="price">+${total}/{activePlan.type === 'Monthly'? 'mo' : 'yr'}</p>
                 </div>
             </div>
             <div className='button-group'>
                 <p onClick={() => setDisplay('addon')}>Go Back</p>
-                <Button>Confirm</Button>
+                <Button onClick={() => setDisplay('summary')}>Confirm</Button>
             </div>
         </Col>
     )

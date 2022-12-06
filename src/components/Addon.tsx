@@ -36,7 +36,7 @@ export default function Addon ({setDisplay, setAddons, addons} : AddonProps) {
      */
     const selectedAddon = (service: string, cost: number) => {
         if(!(selected[service])) {
-            setAddons([...addons, {title: service, cost: 1}])
+            setAddons([...addons, {title: service, cost: cost}])
             setSelected({...selected, [service]: true})
         } else {
             for(let i = 0; i < addons.length; i++) {

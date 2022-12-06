@@ -38,12 +38,12 @@ export default function Plan({ activePlan, setActivePlan, setDisplay, switchPlan
      */
     const updatePlan = () => {
         if (activePlan.title !== '') {
-
             let type = !switchPlan? 'Monthly' : 'Yearly'
             let newCost = !switchPlan? activePlan.cost/10 : activePlan.cost*10
             setActivePlan({...activePlan, cost: newCost, type: type})
         }
         setSwitchPlan(!switchPlan)
+        setActivePlan({...activePlan, type: !switchPlan? 'Monthly' : 'Yearly'})
     }
     return(
         <Col xs={11} sm={12} lg={8} id="plan">
@@ -100,7 +100,7 @@ export default function Plan({ activePlan, setActivePlan, setDisplay, switchPlan
                 <Form>
                     <Form.Label>Monthly</Form.Label>
                     <label className='switch'>
-                        <input type={'checkbox'} onClick={() => updatePlan()} checked={!switchPlan}/>
+                        <input type={'checkbox'} onChange={() => updatePlan()} checked={!switchPlan}/>
                         <span className='slider'></span>
                     </label>
                     <Form.Label>Yearly</Form.Label>

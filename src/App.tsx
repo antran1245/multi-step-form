@@ -4,9 +4,10 @@ import Sidebar from './components/Sidebar';
 import Personal from './components/Personal';
 import Plan from './components/Plan';
 import Addon from './components/Addon';
+import Finishing from './components/Finishing';
+import Summary from './components/summary';
 import './App.css';
 import './sass/App.scss'
-import Finishing from './components/Finishing';
 
 function App() {
   const [display, setDisplay] = useState<string>('personal')
@@ -15,10 +16,10 @@ function App() {
 
   // Plan selected
   const [switchPlan, setSwitchPlan] = useState<boolean>(true)
-  const [activePlan, setActivePlan] = useState<{title: string, cost: number, type: string}>({title: '', cost: 0, type: ''})
+  const [activePlan, setActivePlan] = useState<{title: string, cost: number, type: string}>({title: '', cost: 0, type: 'Monthly'})
 
   // Add on
-  const [addons, setAddons] = useState<{title?: string; cost?: number}[]>([])
+  const [addons, setAddons] = useState<{title?: string; cost?: number | 0}[]>([])
   return (
     <div>
       <Container fluid id="form-box">
@@ -30,6 +31,7 @@ function App() {
               {display === 'plan'? <Plan setDisplay={setDisplay} activePlan={activePlan} setActivePlan={setActivePlan} switchPlan={switchPlan} setSwitchPlan={setSwitchPlan}/> : null}
               {display === 'addon'? <Addon setDisplay={setDisplay} setAddons={setAddons} addons={addons}/> : null}
               {display === 'finishing'? <Finishing setDisplay={setDisplay} form={form} activePlan={activePlan} addons={addons}/> : null}
+              {display === 'summary'? <Summary/> : null}
             </Col>
           </Row>
         </Container>

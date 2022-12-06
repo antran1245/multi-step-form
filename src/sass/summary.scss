@@ -1,0 +1,38 @@
+#summary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .thank {
+        font-size: 32px;
+        line-height: 37px;
+        font-weight: 700;
+        margin-top: 32px;
+    }
+    .message {
+        font-size: 16px;
+        line-height: 25px;
+        color: #9699AA;
+        text-align: center;
+        margin-top: 14px;
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    #summary {
+        img {
+            width: 56px;
+            height: 56px;
+        }
+        .thank {
+            font-size: 24px;
+            line-height: 28px;
+            margin-top: 24px;
+        }
+        .message {
+            width: 100%;
+            margin-top: 9px;
+        }
+    }
+}

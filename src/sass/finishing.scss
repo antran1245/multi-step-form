@@ -71,3 +71,19 @@
         }
     }
 }
+@media only screen and (max-width: 576px) {
+    #finishing {
+        .cart {
+            margin-top: 22px;
+            .plan .title, .plan .price {
+                font-size: 14px;
+            }
+        }
+        .total {
+            .price {
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+    }
+}
